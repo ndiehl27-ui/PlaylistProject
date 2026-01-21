@@ -52,6 +52,7 @@ System.out.println(songs);
 
  }
     public String totalDuration(){
+    
         
     }
     public void removeUnlikedSongs(Song toString, Boolean liked){
