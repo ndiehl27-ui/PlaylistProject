@@ -28,34 +28,37 @@ public class PlaylistTester {
 
         System.out.println("Printing the songs...\n");
         //Print out all the songs in the playlist to verify it's working correctly
+        System.out.println(p1.printSongs());
 
 
         System.out.println("\nLiking the songs in position X, Y, Z, etc....\n");
+        p1.likeSong(songs(0));
         //Once your songs are 'liked', this should be reflected in the next printout
 
 
         System.out.println("Printing the songs...\n");
-
+        System.out.println(p1.printSongs());
 
         System.out.println("\nRemoving the song in position A, B, C, etc...\n");
 
 
         System.out.println("Printing the songs...\n");
-
+        System.out.println(p1.printSongs());    
 
         System.out.println("\nPrinting only the liked songs...\n");
         //Your Playlist should be able to do this without looping while in main!
-
+        System.out.println(p1.printLikedSongs());
 
         System.out.println("\nPrinting the total duration of all songs...\n");
         //Note that the format should look something like minutes:seconds
-
+        System.out.println(p1.totalDuration());
 
         System.out.println("\nRemoving all unliked songs from the playlist...\n");
         //This should be doable with a single method call
-
+        p1.removeUnlikedSongs();
 
         System.out.println("Printing all songs...\n");
         //This should now look like only the liked songs list from before
+        System.out.println(p1.printSongs());
     }
 }

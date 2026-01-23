@@ -24,6 +24,8 @@ public class Song {
         liked = false;
 
     }
+    public int getSeconds()
+    {return length;}
 
     public String getLength()
     {double mins = (int)(length / 60);

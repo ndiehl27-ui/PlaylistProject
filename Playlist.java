@@ -43,22 +43,32 @@ ArrayList<Song> songs;
     songs.remove(toString);
  }
  public void printSongs(){
-System.out.println(songs);
- }
- public void printLikedSongs(Boolean liked){
-    if (liked.equals(true)){
-        System.out.println(songs);
-    }
+   for (int i = 0; i<songs.size(); i++)
+   {system.out.print(song(i).toString());}}
+
+ 
+ public void printLikedSongs(){
+   for(int i=0; i<songs.size();i++)
+    {if ((songs(i).status).equals(true)){
+        System.out.println(songs(i));
+    }}
 
  }
     public String totalDuration(){
-    
-        
+      int totalSeconds = 0;
+      for (int i = 0; i <songs.size(); i++)
+      { totalSeconds += songs(i).getSeconds();}
+      double mins = (int)(totalSeconds/60);
+     double secs = totalSeconds % 60;
+     String duration = mins + ":" + secs;
+     return duration;  
     }
-    public void removeUnlikedSongs(Song toString, Boolean liked){
-        if (liked.equals(false)){
-            songs.remove(toString);
-        }
 
-}
-}
+
+    public void removeUnlikedSongs(){
+      for(int i = 0; i<songs.size();i++){
+        if ((songs(i).status).equals(false)){
+            songs.remove(toString);
+        }}}
+      
+      }
