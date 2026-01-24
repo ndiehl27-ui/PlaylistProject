@@ -44,20 +44,20 @@ ArrayList<Song> songs;
  }
  public void printSongs(){
    for (int i = 0; i<songs.size(); i++)
-   {system.out.print(song(i).toString());}}
+   {System.out.print(songs.get(i).toString());}}
 
  
  public void printLikedSongs(){
    for(int i=0; i<songs.size();i++)
-    {if ((songs(i).status).equals(true)){
-        System.out.println(songs(i));
+    {if ((songs.get(i).status).equals(true)){
+        System.out.println(songs.get(i));
     }}
 
  }
     public String totalDuration(){
       int totalSeconds = 0;
       for (int i = 0; i <songs.size(); i++)
-      { totalSeconds += songs(i).getSeconds();}
+      { totalSeconds += songs.get(i).getSeconds();}
       double mins = (int)(totalSeconds/60);
      double secs = totalSeconds % 60;
      String duration = mins + ":" + secs;
@@ -65,9 +65,9 @@ ArrayList<Song> songs;
     }
 
 
-    public void removeUnlikedSongs(){
+    public void removeUnlikedSongs(Song toString){
       for(int i = 0; i<songs.size();i++){
-        if ((songs(i).status).equals(false)){
+        if ((songs.get(i).status).equals(false)){
             songs.remove(toString);
         }}}
       

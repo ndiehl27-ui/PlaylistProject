@@ -24,7 +24,7 @@ public class Song {
         liked = false;
 
     }
-    public int getSeconds()
+    public double getSeconds()
     {return length;}
 
     public String getLength()
@@ -47,7 +47,7 @@ public class Song {
     {liked = !liked;}
 
     public String toString()
-    {String toString = "'"+name + "'" + " by " + artist + "(" + length + ")";
+    {String toString = "'"+ name + "'" + " by " + artist + "(" + length + ")";
     return toString;
     }
      /**
