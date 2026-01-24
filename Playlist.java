@@ -33,8 +33,8 @@ ArrayList<Song> songs;
        * Removing all unliked songs from the playlist (careful with this one!)
        */
 
- public void addSong(Song toString){
-       songs.add(toString);
+ public void addSong(Song name, Song artist, Song length){
+       songs.add( name, artist, length);
  }
  public void likeSong(){
     changeLike();
