@@ -68,7 +68,13 @@ ArrayList<Song> songs;
       { totalSeconds += songs.get(i).getSeconds();}
       double mins = (int)(totalSeconds/60);
      double secs = totalSeconds % 60;
-     String duration = mins + ":" + secs;
+     String duration;
+     if (secs < 10) {
+      duration = mins + ":0" + secs; 
+     } 
+      else {
+        duration = mins + ":" + secs;
+      }
      return duration;  
     }
 
