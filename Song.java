@@ -45,6 +45,10 @@ public class Song {
 
     public void changeLike()
     {liked = !liked;}
+    
+    public boolean isLiked(){
+        return liked; 
+    }
 
     public String toString()
     {String toString = "'"+ name + "'" + " by " + artist + "(" + length + ")";

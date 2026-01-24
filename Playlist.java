@@ -21,6 +21,9 @@ ArrayList<Song> songs;
      songs = new ArrayList<Song>();
 
      }
+     public Song songs(int index){
+      return songs.get(index);
+     }
 
       /**
        * Methods-- Remember that you need to be able to complete all of the following:
@@ -33,11 +36,11 @@ ArrayList<Song> songs;
        * Removing all unliked songs from the playlist (careful with this one!)
        */
 
- public void addSong(Song name, Song artist, Song length){
-       songs.add( name, artist, length);
+ public void addSong(Song s){
+       songs.add(s);
  }
- public void likeSong(){
-    changeLike();
+ public void likeSong(Song s){
+    s.changeLike();
  }
  public void removeSong(Song toString){
     songs.remove(toString);
@@ -47,13 +50,18 @@ ArrayList<Song> songs;
    {System.out.print(songs.get(i).toString());}}
 
  
- public void printLikedSongs(){
-   for(int i=0; i<songs.size();i++)
-    {if ((songs.get(i).status).equals(true)){
-        System.out.println(songs.get(i));
-    }}
+   public String printLikedSongs(){
+    String liked = ""; 
+    /*status is private */
+     for (Song s : songs){
+      if (s.isLiked()){
+        liked += s.toString() + "\n";
+      }
+      }
+      return liked;
+    }
 
- }
+
     public String totalDuration(){
       int totalSeconds = 0;
       for (int i = 0; i <songs.size(); i++)
@@ -65,10 +73,11 @@ ArrayList<Song> songs;
     }
 
 
-    public void removeUnlikedSongs(Song toString){
-      for(int i = 0; i<songs.size();i++){
-        if ((songs.get(i).status).equals(false)){
-            songs.remove(toString);
-        }}}
+    public void removeUnlikedSongs(){
+      for(int i = 0; i < songs.size(); i++){
+        if(songs.get(i).isLiked() == false){
+        songs.remove(i); 
+        i--; 
+      }}}
       
       }
