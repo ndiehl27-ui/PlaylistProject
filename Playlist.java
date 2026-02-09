@@ -9,7 +9,7 @@ public class Playlist {
      * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
      * (CarDealership, Zoo) for structure on how this will look
      */
-ArrayList<Song> songs;
+private ArrayList<Song> songs;
 
 
 
@@ -21,7 +21,11 @@ ArrayList<Song> songs;
      songs = new ArrayList<Song>();
 
      }
-     public Song songs(int index){
+     /** 
+      * @param index-- the position of the Song in the playlist that you want to access
+      * @return the Song at the given index in the playlist
+      */
+     public Song getSongIndex(int index){
       return songs.get(index);
      }
 
@@ -42,12 +46,16 @@ ArrayList<Song> songs;
  public void likeSong(Song s){
     s.changeLike();
  }
- public void removeSong(Song toString){
-    songs.remove(toString);
+ public void removeSong(Song songObject){
+     songs.remove(songObject);
  }
- public void printSongs(){
-   for (int i = 0; i<songs.size(); i++)
-   {System.out.print(songs.get(i).toString());}}
+ public String printSongs(){
+   String allSongs = "";
+  for (int i = 0; i<songs.size(); i++)
+   {allSongs += songs.get(i).toString() + "\n";
+   }
+    return allSongs;
+}
 
  
    public String printLikedSongs(){
@@ -66,8 +74,8 @@ ArrayList<Song> songs;
       int totalSeconds = 0;
       for (int i = 0; i <songs.size(); i++)
       { totalSeconds += songs.get(i).getSeconds();}
-      double mins = (int)(totalSeconds/60);
-     double secs = totalSeconds % 60;
+      int mins = (int)(totalSeconds/60);
+     int secs = (int) totalSeconds % 60;
      String duration;
      if (secs < 10) {
       duration = mins + ":0" + secs; 

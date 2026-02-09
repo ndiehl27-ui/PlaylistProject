@@ -22,7 +22,7 @@ public class PlaylistTester {
         p1.addSong(new Song("M.I.A","KATSEYE" , 130 ));
         p1.addSong(new Song("Strawberry Blond","Mitski" , 114 ));
         p1.addSong(new Song("Stateside","PinkPantheress" , 168 ));
-        p1.addSong(new Song("ART","Tyla", 148));
+        p1.addSong(new Song("Hurt","NewJeans", 178));
 
 
 
@@ -32,7 +32,7 @@ public class PlaylistTester {
 
 
         System.out.println("\nLiking the songs in position X, Y, Z, etc....\n");
-        p1.likeSong(songs(0));
+        p1.likeSong(p1.getSongIndex(0));
         //Once your songs are 'liked', this should be reflected in the next printout
 
 
